@@ -182,6 +182,7 @@ struct resolv_options {
 	int accept_duplicate_ip; /* flag to indicate whether the associated object can use an IP address
 				    already set to an other object of the same group */
 	int ignore_weight; /* flag to indicate whether to ignore the weight within the record */
+	int ignore_port; /* flag to indicate whether to ignore the port within the record */
 };
 
 /* Resolution structure associated to single server and used to manage name

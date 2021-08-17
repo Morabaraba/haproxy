@@ -803,8 +803,10 @@ srv_found:
 				/* Update the server status */
 				srvrq_update_srv_status(srv, (srv->addr.ss_family != AF_INET && srv->addr.ss_family != AF_INET6));
 
-				srv->svc_port = item->port;
-				srv->flags   &= ~SRV_F_MAPPORTS;
+				if (!srv->resolv_opts.ignore_port) 
+					srv->svc_port = item->port;
+					srv->flags   &= ~SRV_F_MAPPORTS;
+				}
 
 				if (!srv->resolv_opts.ignore_weight) {
 					char weight[9];

@@ -960,6 +960,9 @@ static int srv_parse_resolve_opts(char **args, int *cur_arg,
 		else if (strcmp(p, "ignore-weight") == 0) {
 			newsrv->resolv_opts.ignore_weight = 1;
 		}
+		else if (strcmp(p, "ignore-port") == 0) {
+			newsrv->resolv_opts.ignore_port = 1;
+		}		
 		else if (strcmp(p, "prevent-dup-ip") == 0) {
 			newsrv->resolv_opts.accept_duplicate_ip = 0;
 		}
